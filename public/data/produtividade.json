@@ -2377,6 +2377,14 @@
   },
   {
     "data": "2026-07-01",
+    "nome": "JUNIOR",
+    "percentual": 12.95,
+    "setor": "BAIXA TENSÃO",
+    "turno": "2",
+    "mes": "Julho"
+  },
+  {
+    "data": "2026-07-01",
     "nome": "KENNEDY SANTOS DE MELO",
     "percentual": 99.76,
     "setor": "ALTA TENSÃO",
