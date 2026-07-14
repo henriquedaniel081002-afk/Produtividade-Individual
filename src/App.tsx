@@ -115,16 +115,21 @@ function Header({ onReload, loading }: { onReload: () => void; loading: boolean 
 
   return (
     <header className="topbar">
-      <div>
-        <p className="eyebrow">Inteligência operacional</p>
-        <h1>Produtividade Operacional</h1>
-        <p className="topbar-subtitle">Desempenho individual dos operadores em uma visão única.</p>
-      </div>
-      <div className="updated-block">
-        <div><span>Atualizado em</span><strong>{timestamp}</strong></div>
-        <button className="icon-button" onClick={onReload} title="Recarregar dados" aria-label="Recarregar dados">
-          <RefreshCcw size={17} className={loading ? "spin" : ""} />
-        </button>
+      <div className="topbar-inner">
+        <div className="brand-block">
+          <span className="brand-mark" aria-hidden="true"><Activity size={21} /></span>
+          <div>
+            <p className="eyebrow">Inteligência operacional</p>
+            <h1>Produtividade Operacional</h1>
+            <p className="topbar-subtitle">Desempenho individual dos operadores em uma visão única.</p>
+          </div>
+        </div>
+        <div className="updated-block">
+          <div><span>Atualizado em</span><strong>{timestamp}</strong></div>
+          <button className="icon-button" onClick={onReload} title="Recarregar dados" aria-label="Recarregar dados">
+            <RefreshCcw size={17} className={loading ? "spin" : ""} />
+          </button>
+        </div>
       </div>
     </header>
   );
@@ -157,53 +162,55 @@ function FilterBar({
 
   return (
     <section className="filter-bar" aria-label="Filtros do dashboard">
-      <div className="filter-heading">
-        <span>Filtros</span>
-        {activeCount > 0 && <b>{activeCount} ativo{activeCount > 1 ? "s" : ""}</b>}
-      </div>
-      <div className="filter-grid">
-        {selectFields.map(({ name, label, icon: Icon, values }) => (
-          <label className="filter-control" key={name}>
-            <span>{label}</span>
+      <div className="filter-inner">
+        <div className="filter-heading">
+          <span>Filtros da análise</span>
+          {activeCount > 0 && <b>{activeCount} ativo{activeCount > 1 ? "s" : ""}</b>}
+        </div>
+        <div className="filter-grid">
+          {selectFields.map(({ name, label, icon: Icon, values }) => (
+            <label className="filter-control" key={name}>
+              <span>{label}</span>
+              <div className="control-shell">
+                <Icon size={16} />
+                <select
+                  value={filters[name]}
+                  onChange={(event) => setFilters((current) => ({ ...current, [name]: event.target.value }))}
+                  aria-label={label}
+                >
+                  <option value="">Todos</option>
+                  {values.map((value) => <option value={value} key={value}>{value}</option>)}
+                </select>
+                <ChevronDown size={15} />
+              </div>
+            </label>
+          ))}
+          <label className="filter-control collaborator-control">
+            <span>Colaborador</span>
             <div className="control-shell">
-              <Icon size={16} />
-              <select
-                value={filters[name]}
-                onChange={(event) => setFilters((current) => ({ ...current, [name]: event.target.value }))}
-                aria-label={label}
-              >
-                <option value="">Todos</option>
-                {values.map((value) => <option value={value} key={value}>{value}</option>)}
-              </select>
-              <ChevronDown size={15} />
+              <Search size={16} />
+              <input
+                value={filters.nome}
+                list="operator-options"
+                onChange={(event) => setFilters((current) => ({ ...current, nome: event.target.value }))}
+                placeholder="Buscar ou selecionar operador"
+                aria-label="Buscar colaborador"
+              />
+              <datalist id="operator-options">
+                {options.nomes.map((nome) => <option value={nome} key={nome} />)}
+              </datalist>
             </div>
           </label>
-        ))}
-        <label className="filter-control collaborator-control">
-          <span>Colaborador</span>
-          <div className="control-shell">
-            <Search size={16} />
-            <input
-              value={filters.nome}
-              list="operator-options"
-              onChange={(event) => setFilters((current) => ({ ...current, nome: event.target.value }))}
-              placeholder="Buscar ou selecionar operador"
-              aria-label="Buscar colaborador"
-            />
-            <datalist id="operator-options">
-              {options.nomes.map((nome) => <option value={nome} key={nome} />)}
-            </datalist>
-          </div>
-        </label>
-        <button
-          type="button"
-          className="clear-button"
-          disabled={!activeCount}
-          onClick={() => setFilters(EMPTY_FILTERS)}
-          title="Limpar filtros"
-        >
-          <FilterX size={17} /><span>Limpar</span>
-        </button>
+          <button
+            type="button"
+            className="clear-button"
+            disabled={!activeCount}
+            onClick={() => setFilters(EMPTY_FILTERS)}
+            title="Limpar filtros"
+          >
+            <FilterX size={17} /><span>Limpar</span>
+          </button>
+        </div>
       </div>
     </section>
   );
@@ -268,7 +275,7 @@ function MainGauge({ average, operators, records }: { average: number; operators
           <defs>
             <linearGradient id="gaugeGradient" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor="#0fa968" />
-              <stop offset="100%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#62e6b3" />
             </linearGradient>
           </defs>
           <path className="gauge-track" pathLength="100" d="M 20 108 A 90 90 0 0 1 200 108" />
@@ -280,20 +287,22 @@ function MainGauge({ average, operators, records }: { average: number; operators
   );
 }
 
-function TopThree({ ranking, onSelect }: { ranking: RankingRow[]; onSelect: (name: string) => void }) {
-  const medals = [Crown, Medal, Medal];
+function TopFive({ ranking, onSelect }: { ranking: RankingRow[]; onSelect: (name: string) => void }) {
   return (
-    <article className="panel top-three-panel">
+    <article className="panel top-five-panel">
       <div className="panel-heading">
-        <div><span className="section-kicker"><Trophy size={16} /> Destaques</span><h2>Top 3 operadores</h2></div>
+        <div><span className="section-kicker"><Trophy size={16} /> Destaques</span><h2>Top 5 operadores</h2></div>
         <span className="subtle-label">Média do período</span>
       </div>
-      <div className="top-three-list">
-        {ranking.slice(0, 3).map((row, index) => {
-          const Icon = medals[index];
+      <div className="top-five-list">
+        {ranking.slice(0, 5).map((row, index) => {
+          const MedalIcon = index === 0 ? Crown : index < 3 ? Medal : null;
           return (
             <button className={`podium-row podium-${index + 1}`} key={row.nome} onClick={() => onSelect(row.nome)}>
-              <span className="podium-position"><Icon size={17} />{index + 1}</span>
+              <span className="podium-position">
+                {MedalIcon ? <MedalIcon size={16} /> : <i aria-hidden="true" />}
+                <em>{index + 1}</em>
+              </span>
               <span className="avatar">{initials(row.nome)}</span>
               <span className="podium-person"><b>{row.nome}</b><small>{truncateList(row.setores)} • {truncateList(row.turnos, "º turno")}</small></span>
               <strong>{formatPercent(row.avg)}</strong>
@@ -357,6 +366,10 @@ function RankingTable({ ranking, onSelect }: { ranking: RankingRow[]; onSelect: 
     direction: current.key === key && current.direction === "asc" ? "desc" : "asc",
   }));
 
+  const ariaSort = (key: SortKey) => sort.key === key
+    ? sort.direction === "asc" ? "ascending" : "descending"
+    : "none";
+
   return (
     <article className="panel ranking-panel">
       <div className="panel-heading ranking-heading">
@@ -366,18 +379,33 @@ function RankingTable({ ranking, onSelect }: { ranking: RankingRow[]; onSelect: 
       <div className="table-scroll">
         <table className="ranking-table">
           <thead><tr>
-            <th><button onClick={() => changeSort("position")}>Posição <ChevronDown size={13} /></button></th>
-            <th><button onClick={() => changeSort("nome")}>Operador <ChevronDown size={13} /></button></th>
-            <th><button onClick={() => changeSort("avg")}>Média <ChevronDown size={13} /></button></th>
+            <th aria-sort={ariaSort("position")}><button onClick={() => changeSort("position")}>Posição <ChevronDown size={13} /></button></th>
+            <th aria-sort={ariaSort("nome")}><button onClick={() => changeSort("nome")}>Operador <ChevronDown size={13} /></button></th>
+            <th aria-sort={ariaSort("avg")}><button onClick={() => changeSort("avg")}>Média <ChevronDown size={13} /></button></th>
             <th>Status</th><th>Melhor mês</th><th>Pior mês</th>
-            <th><button onClick={() => changeSort("evolution")}>Evolução <ChevronDown size={13} /></button></th>
+            <th aria-sort={ariaSort("evolution")}><button onClick={() => changeSort("evolution")}>Evolução <ChevronDown size={13} /></button></th>
             <th>Tendência</th>
           </tr></thead>
           <tbody>
             {sorted.slice(0, visible).map((row) => (
-              <tr key={row.nome} onClick={() => onSelect(row.nome)} tabIndex={0} onKeyDown={(event) => event.key === "Enter" && onSelect(row.nome)}>
+              <tr
+                key={row.nome}
+                onClick={() => onSelect(row.nome)}
+              >
                 <td><span className={`rank-number ${row.position <= 3 ? "rank-top" : ""}`}>{row.position}º</span></td>
-                <td><div className="operator-cell"><span className="avatar small">{initials(row.nome)}</span><span><b>{row.nome}</b><small>{truncateList(row.setores)} • {truncateList(row.turnos, "º")}</small></span></div></td>
+                <td>
+                  <button
+                    type="button"
+                    className="operator-link"
+                    aria-label={`Abrir painel de ${row.nome}`}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      onSelect(row.nome);
+                    }}
+                  >
+                    <span className="operator-cell"><span className="avatar small">{initials(row.nome)}</span><span><b>{row.nome}</b><small>{truncateList(row.setores)} • {truncateList(row.turnos, "º")}</small></span></span>
+                  </button>
+                </td>
                 <td><b className={`${statusTone(row.status)}-text`}>{formatPercent(row.avg)}</b></td>
                 <td><span className={`status-badge ${statusTone(row.status)}`}><i />{row.status}</span></td>
                 <td>{row.bestMonth ? <span>{row.bestMonth.mes}<small>{formatPercent(row.bestMonth.avg, 1)}</small></span> : "—"}</td>
@@ -420,7 +448,7 @@ function Overview({
         <MetricCard label="Críticos" value={critical} helper="Média inferior a 80%" tone="critical" icon={AlertTriangle} onClick={() => setFilters((current) => ({ ...current, status: "Crítico" }))} />
       </section>
       <section className="insight-grid">
-        <TopThree ranking={ranking} onSelect={onSelect} />
+        <TopFive ranking={ranking} onSelect={onSelect} />
         <StatusDistribution ranking={ranking} setFilters={setFilters} />
       </section>
       <RankingTable ranking={ranking} onSelect={onSelect} />
@@ -467,15 +495,15 @@ function buildSmoothPath(points: Array<{ x: number; y: number }>) {
   if (!points.length) return "";
   if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
 
-  return points.reduce((path, point, index) => {
-    if (index === 0) return `M ${point.x} ${point.y}`;
-    const previous = points[index - 1];
-    const controlX = (previous.x + point.x) / 2;
-    return `${path} C ${controlX} ${previous.y}, ${controlX} ${point.y}, ${point.x} ${point.y}`;
-  }, "");
+  return points.slice(1).reduce((path, point, index) => {
+    const previous = points[index];
+    const controlOffset = (point.x - previous.x) * 0.42;
+    return `${path} C ${previous.x + controlOffset} ${previous.y}, ${point.x - controlOffset} ${point.y}, ${point.x} ${point.y}`;
+  }, `M ${points[0].x} ${points[0].y}`);
 }
 
 function EvolutionChart({ rows }: { rows: MonthlyAverage[] }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const values = rows.map((row) => row.avg * 100);
   const min = Math.max(0, Math.floor((Math.min(...values, 95) - 8) / 10) * 10);
   const max = Math.ceil((Math.max(...values, 95) + 8) / 10) * 10;
@@ -493,6 +521,16 @@ function EvolutionChart({ rows }: { rows: MonthlyAverage[] }) {
   const variation = rows.length > 1 ? rows.at(-1)!.avg - rows[0].avg : 0;
   const lowestIndex = values.indexOf(Math.min(...values));
   const highestIndex = values.indexOf(Math.max(...values));
+  const activePoint = activeIndex === null ? null : points[activeIndex] ?? null;
+
+  const labelPlacement = (index: number) => {
+    const point = points[index];
+    const previous = points[index - 1];
+    const next = points[index + 1];
+    const closeToNeighbor = (previous && Math.abs(previous.y - point.y) < 9)
+      || (next && Math.abs(next.y - point.y) < 9);
+    return point.y < 29 || (closeToNeighbor && index % 2 === 1) ? "below" : "above";
+  };
 
   return (
     <article className="panel evolution-panel">
@@ -500,14 +538,15 @@ function EvolutionChart({ rows }: { rows: MonthlyAverage[] }) {
       <div className="line-chart">
         <div className="chart-plot">
           <svg viewBox="0 0 100 92" preserveAspectRatio="none" role="img" aria-label="Evolução mensal do colaborador">
-            <defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#16c784" stopOpacity=".32" /><stop offset="100%" stopColor="#16c784" stopOpacity="0" /></linearGradient></defs>
+            <defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#16c784" stopOpacity=".24" /><stop offset="72%" stopColor="#16c784" stopOpacity=".04" /><stop offset="100%" stopColor="#16c784" stopOpacity="0" /></linearGradient></defs>
             {[18, 49, 80].map((y) => <line key={y} x1="5" x2="95" y1={y} y2={y} className="chart-grid-line" />)}
             <line x1="5" x2="95" y1={targetY} y2={targetY} className="target-line" />
             {points.length > 1 && <path d={areaPath} fill="url(#areaGradient)" />}
             <path d={linePath} className="evolution-line" />
             {points.map((point, index) => {
-              const isLowest = index === lowestIndex;
-              const isHighest = index === highestIndex;
+              const hasDistinctExtremes = lowestIndex !== highestIndex;
+              const isLowest = hasDistinctExtremes && index === lowestIndex;
+              const isHighest = hasDistinctExtremes && index === highestIndex;
               const tone = isLowest ? "lowest" : isHighest ? "highest" : "neutral";
               return (
                 <g key={point.mes} className={`evolution-point ${tone}`}>
@@ -518,19 +557,47 @@ function EvolutionChart({ rows }: { rows: MonthlyAverage[] }) {
             })}
           </svg>
           {points.map((point, index) => {
-            const isLowest = index === lowestIndex;
-            const isHighest = index === highestIndex;
-            if (!isLowest && !isHighest) return null;
-            const tone = isLowest ? "lowest" : "highest";
+            const hasDistinctExtremes = lowestIndex !== highestIndex;
+            const isLowest = hasDistinctExtremes && index === lowestIndex;
+            const isHighest = hasDistinctExtremes && index === highestIndex;
+            const tone = isLowest ? "lowest" : isHighest ? "highest" : "neutral";
             return (
-              <span className={`point-label ${tone}`} key={point.mes} style={{ left: `${point.x}%`, top: `${(point.y / 92) * 100}%` }}>
-                {formatPercent(point.avg)}
-              </span>
+              <button
+                type="button"
+                className={`chart-hit-target ${tone}`}
+                key={point.mes}
+                style={{ left: `${point.x}%`, top: `${(point.y / 92) * 100}%` }}
+                onPointerEnter={(event) => event.pointerType === "mouse" && setActiveIndex(index)}
+                onPointerLeave={(event) => event.pointerType === "mouse" && setActiveIndex(null)}
+                onPointerDown={(event) => {
+                  if (event.pointerType !== "mouse") setActiveIndex((current) => current === index ? null : index);
+                }}
+                onFocus={() => setActiveIndex(index)}
+                onBlur={() => setActiveIndex(null)}
+                onClick={(event) => {
+                  if (event.detail === 0) setActiveIndex(index);
+                }}
+                aria-label={`${point.mes}: produtividade ${formatPercent(point.avg)}, meta 95%, diferença ${formatChange(point.avg - TARGET_PRODUCTIVITY)}`}
+              >
+                <span className={`point-label ${labelPlacement(index)}`}>{formatPercent(point.avg, 1)}</span>
+              </button>
             );
           })}
+          {activePoint && (
+            <div
+              className={`chart-tooltip ${activePoint.y < 38 ? "below" : "above"} ${activePoint.x < 20 ? "align-start" : activePoint.x > 80 ? "align-end" : ""}`}
+              style={{ left: `${activePoint.x}%`, top: `${(activePoint.y / 92) * 100}%` }}
+              role="status"
+            >
+              <div className="tooltip-heading"><span>{activePoint.mes}</span><small>Visão mensal</small></div>
+              <div className="tooltip-metric"><span>Produtividade</span><strong>{formatPercent(activePoint.avg)}</strong></div>
+              <div className="tooltip-row"><span>Meta</span><b>{formatPercent(TARGET_PRODUCTIVITY, 0)}</b></div>
+              <div className="tooltip-row"><span>Diferença</span><b className={activePoint.avg >= TARGET_PRODUCTIVITY ? "success-text" : "critical-text"}>{formatChange(activePoint.avg - TARGET_PRODUCTIVITY)}</b></div>
+            </div>
+          )}
           <span className="target-label" style={{ top: `${(targetY / 92) * 100}%` }}>Meta 95%</span>
+          <div className="month-axis">{points.map((point) => <span key={point.mes} style={{ left: `${point.x}%` }}>{point.mes.slice(0, 3)}</span>)}</div>
         </div>
-        <div className="month-axis">{rows.map((row) => <span key={row.mes}>{row.mes.slice(0, 3)}</span>)}</div>
       </div>
     </article>
   );

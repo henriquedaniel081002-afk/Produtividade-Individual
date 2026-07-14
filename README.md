@@ -6,7 +6,7 @@ Dashboard web responsivo para análise da produtividade individual dos operadore
 
 - filtros por mês, setor, turno, status e colaborador;
 - ranking baseado na média mensal de cada operador;
-- visão consolidada com média geral, faixas de desempenho e Top 3;
+- visão consolidada com média geral, faixas de desempenho e Top 5;
 - tabela completa com melhor mês, pior mês, evolução e tendência;
 - painel individual com comparação entre colaborador e equipe;
 - leitura direta do arquivo `public/data/produtividade.json`;
@@ -50,5 +50,6 @@ npm run dev
 Para validar a versão de produção:
 
 ```bash
-npm test
+npm run lint
+npm run build
 ```
