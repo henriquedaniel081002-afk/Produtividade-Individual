@@ -52,7 +52,7 @@
     "nome": "BRUNO DA SILVA GEMAQUE",
     "percentual": 61.71,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Abril"
   },
   {
@@ -60,6 +60,14 @@
     "nome": "CARLOS RAMALHO DA SILVA",
     "percentual": 87.6,
     "setor": "BAIXA TENSÃO",
+    "turno": "1",
+    "mes": "Abril"
+  },
+  {
+    "data": "2026-04-01",
+    "nome": "CARLOS SANTOS SILVA",
+    "percentual": 63.24,
+    "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Abril"
   },
@@ -154,9 +162,9 @@
   {
     "data": "2026-04-01",
     "nome": "EMERSON BRUNO PAES SABAT",
-    "percentual": 76.44,
+    "percentual": 76.45,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Abril"
   },
   {
@@ -172,13 +180,13 @@
     "nome": "FRANCISCO ALEXANDRE ALVES DE SOUZA",
     "percentual": 50.94,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Abril"
   },
   {
     "data": "2026-04-01",
     "nome": "FREDSON PANTOJA FARIAS",
-    "percentual": 91.3,
+    "percentual": 91.31,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Abril"
@@ -210,7 +218,7 @@
   {
     "data": "2026-04-01",
     "nome": "IRANILDO CORREA PAIVA",
-    "percentual": 83.5,
+    "percentual": 84.26,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Abril"
@@ -265,6 +273,14 @@
   },
   {
     "data": "2026-04-01",
+    "nome": "JORGE ADRIANO LEAL DE SOUZA BADER",
+    "percentual": 83.71,
+    "setor": "BAIXA TENSÃO",
+    "turno": "2",
+    "mes": "Abril"
+  },
+  {
+    "data": "2026-04-01",
     "nome": "JOSE RODRIGO FERREIRA DO NASCIMENTO",
     "percentual": 66.29,
     "setor": "ALTA TENSÃO",
@@ -300,7 +316,7 @@
     "nome": "KRISTOPHER DE SOUZA MARQUES",
     "percentual": 66.36,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Abril"
   },
   {
@@ -308,7 +324,7 @@
     "nome": "LEONARDO ARAUJO DE SOUZA",
     "percentual": 68.72,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Abril"
   },
   {
@@ -324,7 +340,7 @@
     "nome": "MARCIO GREYK MACEDO DOS SANTOS JUNIOR",
     "percentual": 77.44,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Abril"
   },
   {
@@ -388,7 +404,7 @@
     "nome": "PERICLES ANGEL MONTEIRO DA SILVA",
     "percentual": 69.1,
     "setor": "ALTA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Abril"
   },
   {
@@ -428,7 +444,7 @@
     "nome": "WALDENEY ELIAS DE LIMA",
     "percentual": 83.33,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Abril"
   },
   {
@@ -484,7 +500,7 @@
     "nome": "BRUNO DA SILVA GEMAQUE",
     "percentual": 83.8,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Maio"
   },
   {
@@ -596,7 +612,7 @@
     "nome": "EMERSON BRUNO PAES SABAT",
     "percentual": 75.95,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Maio"
   },
   {
@@ -620,7 +636,7 @@
     "nome": "FRANCISCO ALEXANDRE ALVES DE SOUZA",
     "percentual": 31.88,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Maio"
   },
   {
@@ -740,7 +756,7 @@
     "nome": "KRISTOPHER DE SOUZA MARQUES",
     "percentual": 73.96,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Maio"
   },
   {
@@ -756,7 +772,7 @@
     "nome": "LEONARDO ARAUJO DE SOUZA",
     "percentual": 94.86,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Maio"
   },
   {
@@ -772,7 +788,7 @@
     "nome": "MARCIO GREYK MACEDO DOS SANTOS JUNIOR",
     "percentual": 93.02,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Maio"
   },
   {
@@ -818,7 +834,7 @@
   {
     "data": "2026-05-01",
     "nome": "NELDSON SOUZA DA FONSECA",
-    "percentual": 91.26,
+    "percentual": 90.92,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Maio"
@@ -836,7 +852,7 @@
     "nome": "PERICLES ANGEL MONTEIRO DA SILVA",
     "percentual": 75.17,
     "setor": "ALTA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Maio"
   },
   {
@@ -876,7 +892,7 @@
     "nome": "WALDENEY ELIAS DE LIMA",
     "percentual": 78.47,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Maio"
   },
   {
@@ -940,7 +956,7 @@
     "nome": "BRUNO DA SILVA GEMAQUE",
     "percentual": 71.19,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Junho"
   },
   {
@@ -1044,7 +1060,7 @@
     "nome": "EMERSON BRUNO PAES SABAT",
     "percentual": 64.9,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Junho"
   },
   {
@@ -1060,7 +1076,7 @@
     "nome": "FRANCISCO ALEXANDRE ALVES DE SOUZA",
     "percentual": 53.82,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Junho"
   },
   {
@@ -1172,7 +1188,7 @@
     "nome": "KRISTOPHER DE SOUZA MARQUES",
     "percentual": 61.96,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Junho"
   },
   {
@@ -1188,7 +1204,7 @@
     "nome": "LEONARDO ARAUJO DE SOUZA",
     "percentual": 89.51,
     "setor": "ALTA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Junho"
   },
   {
@@ -1204,7 +1220,7 @@
     "nome": "MARCIO GREYK MACEDO DOS SANTOS JUNIOR",
     "percentual": 88.85,
     "setor": "BAIXA TENSÃO",
-    "turno": "2",
+    "turno": "1",
     "mes": "Junho"
   },
   {
@@ -1268,7 +1284,7 @@
     "nome": "PERICLES ANGEL MONTEIRO DA SILVA",
     "percentual": 84.81,
     "setor": "ALTA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Junho"
   },
   {
@@ -1316,7 +1332,7 @@
     "nome": "WALDENEY ELIAS DE LIMA",
     "percentual": 85.74,
     "setor": "BAIXA TENSÃO",
-    "turno": "1",
+    "turno": "2",
     "mes": "Junho"
   },
   {
@@ -1338,7 +1354,7 @@
   {
     "data": "2026-07-01",
     "nome": "ANDERSON BRUNO DE LIMA MORAES",
-    "percentual": 83.58,
+    "percentual": 83.69,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1354,7 +1370,7 @@
   {
     "data": "2026-07-01",
     "nome": "ANDREY",
-    "percentual": 60.2,
+    "percentual": 60.81,
     "setor": "BAIXA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1370,7 +1386,7 @@
   {
     "data": "2026-07-01",
     "nome": "ANTONIO FERNANDO DOS SANTOS",
-    "percentual": 86.91,
+    "percentual": 87.01,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1386,7 +1402,7 @@
   {
     "data": "2026-07-01",
     "nome": "BRUNO GARCIA DE SOUZA",
-    "percentual": 36.35,
+    "percentual": 36.71,
     "setor": "BAIXA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1402,7 +1418,7 @@
   {
     "data": "2026-07-01",
     "nome": "CLAUDINEI DA SILVA MARIALVA",
-    "percentual": 83.08,
+    "percentual": 83.33,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1418,7 +1434,7 @@
   {
     "data": "2026-07-01",
     "nome": "CRISTHOFFER DA SILVA E SILVA",
-    "percentual": 96.81,
+    "percentual": 97.26,
     "setor": "BAIXA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1426,7 +1442,7 @@
   {
     "data": "2026-07-01",
     "nome": "DAVID BRITO SEIXAS",
-    "percentual": 102.12,
+    "percentual": 102.64,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1434,7 +1450,7 @@
   {
     "data": "2026-07-01",
     "nome": "DAVID JUNIOR DA SILVA MENDONÇA",
-    "percentual": 67.5,
+    "percentual": 67.79,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1442,7 +1458,7 @@
   {
     "data": "2026-07-01",
     "nome": "DIEGO BANDEIRA RIKER DE SOUSA",
-    "percentual": 91.92,
+    "percentual": 92.29,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1458,7 +1474,7 @@
   {
     "data": "2026-07-01",
     "nome": "ELDER DOURADO DA SILVA",
-    "percentual": 80.49,
+    "percentual": 80.62,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1490,7 +1506,7 @@
   {
     "data": "2026-07-01",
     "nome": "FRANCISCO ALEXANDRE ALVES DE SOUZA",
-    "percentual": 58.21,
+    "percentual": 58.68,
     "setor": "BAIXA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1522,7 +1538,7 @@
   {
     "data": "2026-07-01",
     "nome": "GEOVANE LIMA DA SILVA",
-    "percentual": 93.45,
+    "percentual": 93.99,
     "setor": "BAIXA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1538,7 +1554,7 @@
   {
     "data": "2026-07-01",
     "nome": "IRANILDO CORREA PAIVA",
-    "percentual": 80.83,
+    "percentual": 81.81,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1594,7 +1610,7 @@
   {
     "data": "2026-07-01",
     "nome": "JOSE RODRIGO FERREIRA DO NASCIMENTO",
-    "percentual": 84.4,
+    "percentual": 84.41,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1642,7 +1658,7 @@
   {
     "data": "2026-07-01",
     "nome": "LEONARDO ARAUJO DE SOUZA",
-    "percentual": 82.15,
+    "percentual": 82.25,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1650,7 +1666,7 @@
   {
     "data": "2026-07-01",
     "nome": "MANOEL JOSIMAR SOARES DOS ANJOS",
-    "percentual": 92.09,
+    "percentual": 91.5,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1658,7 +1674,7 @@
   {
     "data": "2026-07-01",
     "nome": "MARCIO GREYK MACEDO DOS SANTOS JUNIOR",
-    "percentual": 94.5,
+    "percentual": 94.91,
     "setor": "BAIXA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1666,7 +1682,7 @@
   {
     "data": "2026-07-01",
     "nome": "MARCOS FERNANDES CRUZ",
-    "percentual": 94.22,
+    "percentual": 94.35,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
@@ -1682,7 +1698,7 @@
   {
     "data": "2026-07-01",
     "nome": "MATHEUS NAILSON PINHEIRO DE SOUZA",
-    "percentual": 83.9,
+    "percentual": 84.02,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1690,7 +1706,7 @@
   {
     "data": "2026-07-01",
     "nome": "MAX DOS SANTOS NASCIMENTO",
-    "percentual": 91.05,
+    "percentual": 91.17,
     "setor": "ALTA TENSÃO",
     "turno": "1",
     "mes": "Julho"
@@ -1730,7 +1746,7 @@
   {
     "data": "2026-07-01",
     "nome": "PERICLES ANGEL MONTEIRO DA SILVA",
-    "percentual": 69.03,
+    "percentual": 69.17,
     "setor": "ALTA TENSÃO",
     "turno": "2",
     "mes": "Julho"
